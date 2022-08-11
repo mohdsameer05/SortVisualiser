@@ -31,5 +31,11 @@ async function insertion()
 const InsertionSortButton=document.querySelector(".insertionSort");
 InsertionSortButton.addEventListener('click', async function()
 {
-     await insertion();
+  disableSortingButton();
+ disableSizeSlider();
+ disableNewArrayButton();
+ await insertion();
+ enableSortingButton();
+ enableSizeSlider();
+ enableNewArrayButton();
 });
