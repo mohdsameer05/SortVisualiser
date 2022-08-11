@@ -98,8 +98,14 @@ async function mergesort(ele,l,r)
 const mergeSortButton=document.querySelector(".mergeSort");
 mergeSortButton.addEventListener('click', async function()
 {
-     let ele=document.querySelectorAll('.bar');
-     let l=0;
-     let r=parseInt(ele.length)-1;
-     await mergesort(ele,l,r);
+  disableSizeSlider();
+ disableNewArrayButton();
+ disableSortingButton();
+ let ele=document.querySelectorAll('.bar');
+ let l=0;
+ let r=parseInt(ele.length)-1;
+ await mergesort(ele,l,r);
+ enableSortingButton();
+ enableSizeSlider();
+ enableNewArrayButton();
 });
