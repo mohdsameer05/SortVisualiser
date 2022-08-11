@@ -62,8 +62,14 @@ async function quicksort(ele,l,r)
 const quickSortButton=document.querySelector(".quickSort");
 quickSortButton.addEventListener('click', async function()
 {
+    disableSortingButton();
+    disableSizeSlider();
+    disableNewArrayButton();
     let ele=document.querySelectorAll('.bar');
     let l=0;
     let r=ele.length-1;
-     await quicksort(ele,l,r);
+    await quicksort(ele,l,r);
+    enableSortingButton();
+    enableSizeSlider();
+    enableNewArrayButton();
 });
